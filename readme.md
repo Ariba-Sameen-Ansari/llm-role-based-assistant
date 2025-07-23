@@ -15,20 +15,14 @@ LLM Role-Based Assistant is a FastAPI-powered application that utilizes OpenAI's
 
 ---
 
+
 ## 📸 Screenshots
 
-### 1. Swagger UI
-![Swagger UI](screenshots/1_swagger_ui.png)
+### 🔹 Swagger Input (Role-based question)
+![Role-based input](screenshots/1_input_role_based_question.png)
 
-### 2. Sample Question for Developer
-![Developer Question](screenshots/2_developer_question.png)
-
-### 3. Postman API Call
-![Postman Test](screenshots/4_browser_postman.png)
-
-### 4. GitHub Project Structure
-![GitHub Structure](screenshots/6_github_structure.png)
-
+### 🔹 API Response (Role-specific answer)
+![Response output](screenshots/2_output_role_based_response.png)
 ---
 
 ## 📦 Installation
