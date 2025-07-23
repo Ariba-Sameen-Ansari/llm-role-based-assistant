@@ -37,7 +37,9 @@ source venv/bin/activate   # On macOS/Linux
 
 pip install -r requirements.txt
 uvicorn main:app --reload
-🔐 Environment Variables
+```
+
+## 🔐 Environment Variables
 To configure your OpenAI API key securely:
 
 Create a .env file in the root folder.
@@ -51,7 +53,7 @@ OPENAI_API_KEY=your_real_openai_key_here
 ✅ .env is already added to .gitignore, so your secret stays safe.
 ✅ A .env.example file is included as a reference.
 
-🛠️ Usage
+## 🛠️ Usage
 Send a POST request to /ask with a JSON body:
 
 json
@@ -74,7 +76,8 @@ curl -X 'POST' \
   "role": "developer",
   "question": "How do I write a Python function to reverse a string?"
 }'
-📁 File Structure
+
+## 📁 File Structure
 bash
 Copy
 Edit
@@ -86,7 +89,8 @@ llm-role-based-assistant/
 ├── .gitignore
 ├── readme.md
 └── screenshots/          # Project screenshots
-🧠 Future Enhancements
+
+## 🧠 Future Enhancements
 Add more roles (e.g., designer, tester)
 
 Integrate JWT authentication
@@ -95,13 +99,13 @@ Enable role-based access control
 
 Host on Render or Railway
 
-👩‍💻 Author
+## 👩‍💻 Author
 Ariba Sameen Ansari
 GitHub: Ariba-Sameen-Ansari
 Email: aribasameen0960@gmail.com
 
 📄 License
-This project is open source and available under the MIT License.
+This project is open source and available under the [Apache License 2.0](LICENSE)..
 
 
 
