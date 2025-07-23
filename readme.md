@@ -1,7 +1,33 @@
 
-# 🤖 LLM Role-Based Assistant API
+# 🤖 LLM Role-Based Assistant
 
-A FastAPI-based backend service that lets users interact with an LLM using different role personas like Developer, Manager, Analyst, and Student.
+LLM Role-Based Assistant is a FastAPI-powered application that utilizes OpenAI's API to generate contextually tailored responses based on user roles (e.g., developer, analyst, student, manager). It is ideal for personalized assistance, tutoring, and decision-making support.
+
+---
+
+## 🚀 Features
+
+- Role-specific responses (developer, analyst, student, manager)
+- OpenAI API integration
+- FastAPI backend
+- Environment variable support using `.env`
+- Clean Swagger (OpenAPI) documentation
+
+---
+
+## 📸 Screenshots
+
+### 1. Swagger UI
+![Swagger UI](screenshots/1_swagger_ui.png)
+
+### 2. Sample Question for Developer
+![Developer Question](screenshots/2_developer_question.png)
+
+### 3. Postman API Call
+![Postman Test](screenshots/4_browser_postman.png)
+
+### 4. GitHub Project Structure
+![GitHub Structure](screenshots/6_github_structure.png)
 
 ---
 
@@ -17,61 +43,72 @@ source venv/bin/activate   # On macOS/Linux
 
 pip install -r requirements.txt
 uvicorn main:app --reload
+🔐 Environment Variables
+To configure your OpenAI API key securely:
 
-```
+Create a .env file in the root folder.
 
-🔐 Environment Setup
-Create a .env file in the project root.
+Add your key like this:
 
-Copy the contents of .env.example into it.
-
-Replace the placeholder with your actual OpenAI API key:
-
-env
+bash
 Copy
 Edit
 OPENAI_API_KEY=your_real_openai_key_here
-📂 Project Structure
-css
+✅ .env is already added to .gitignore, so your secret stays safe.
+✅ A .env.example file is included as a reference.
+
+🛠️ Usage
+Send a POST request to /ask with a JSON body:
+
+json
+Copy
+Edit
+{
+  "role": "developer",
+  "question": "How do I write a Python function to reverse a string?"
+}
+Example via curl:
+
+bash
+Copy
+Edit
+curl -X 'POST' \
+  'http://127.0.0.1:8000/ask' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "role": "developer",
+  "question": "How do I write a Python function to reverse a string?"
+}'
+📁 File Structure
+bash
 Copy
 Edit
 llm-role-based-assistant/
-├── main.py
-├── role_logic.py
-├── .env.example
-├── requirements.txt
-├── README.md
-├── LICENSE
-└── screenshots/
-    ├── 1_swagger_ui.png
-    ├── 2_post_request_input.png
-    ├── 2_post_request_response.png
-    ├── 3_valid_response.png
-🖼️ Screenshots
-🔹 1. Swagger UI Home
+│
+├── main.py               # FastAPI entry point
+├── role_logic.py         # Role-based response logic
+├── .env.example          # Sample env file
+├── .gitignore
+├── readme.md
+└── screenshots/          # Project screenshots
+🧠 Future Enhancements
+Add more roles (e.g., designer, tester)
 
-🔹 2. POST Request Input
+Integrate JWT authentication
 
-🔹 2. POST Request Response
+Enable role-based access control
 
-🔹 3. Valid Role-Based LLM Response
+Host on Render or Railway
 
-🛠️ Technologies Used
-FastAPI
-
-Uvicorn
-
-OpenAI API
-
-Pydantic
-
-Python-dotenv
-
-🧠 Author
+👩‍💻 Author
 Ariba Sameen Ansari
-Cybersecurity Analyst | FastAPI Developer | AI + Security Enthusiast
-🌐 GitHub
+GitHub: Ariba-Sameen-Ansari
+Email: aribasameen0960@gmail.com
 
-📎 License
-This project is licensed under the Apache License 2.0.
-See the LICENSE file for more details.
+📄 License
+This project is open source and available under the MIT License.
+
+
+
+---
